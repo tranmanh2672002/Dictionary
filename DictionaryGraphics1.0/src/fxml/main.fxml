@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #caf0f8;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controlMain">
+<children>
+    <Label layoutX="124.0" layoutY="17.0" prefHeight="87.0" prefWidth="477.0" style="-fx-background-color: #caf0f8;" text="       DICTIONARY">
+        <textFill>
+            <LinearGradient endX="0.9714285714285714" endY="0.5571428571428572" startX="0.9523809523809523">
+                <stops>
+                    <Stop>
+                        <color>
+                            <Color red="0.07919103652238846" green="0.19560185074806213" blue="0.8552631735801697" />
+                        </color>
+                    </Stop>
+                    <Stop offset="1.0">
+                        <color>
+                            <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                    </Stop>
+                </stops>
+            </LinearGradient>
+        </textFill>
+        <font>
+            <Font name="Baskerville Old Face" size="52.0" />
+        </font></Label>
+    <Button layoutX="568.0" layoutY="121.0" mnemonicParsing="false" onAction="#buttonSearch" prefHeight="32.0" prefWidth="77.0" style="-fx-background-radius: 100; -fx-background-color: #0077b6;" text="Search" textFill="#ffe100">
+        <font>
+            <Font name="System Bold Italic" size="14.0" />
+        </font></Button>
+    <Button layoutX="647.0" layoutY="510.0" mnemonicParsing="false" onAction="#actionExit" prefHeight="32.0" prefWidth="36.0" style="-fx-background-radius: 100; -fx-background-color: #f79256;" text="Exit" textFill="#f50606">
+        <font>
+            <Font name="Baskerville Old Face" size="12.0" />
+        </font></Button>
+    <TextField fx:id="searchField" layoutX="233.0" layoutY="121.0" onKeyPressed="#setInput" prefHeight="32.0" prefWidth="315.0" promptText="Searching" style="-fx-background-radius: 50; -fx-background-color: #ffb703; -fx-font-size: 14;">
+        <font>
+            <Font size="14.0" />
+        </font></TextField>
+    <TextArea id="text-area" fx:id="textAreaMenu" layoutX="182.0" layoutY="177.0" prefHeight="322.0" prefWidth="465.0" scrollLeft="0.5" scrollTop="0.5" style="-fx-font-size: 16; -fx-background-color: aliceblue;">
+        <font>
+            <Font size="14.0" />
+        </font></TextArea>
+    <ImageView fitHeight="93.0" fitWidth="96.0" focusTraversable="true" layoutX="22.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../logo.png" />
+        </image>
+        <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+        </cursor></ImageView>
+      <MenuBar layoutX="14.0" layoutY="121.0" prefHeight="32.0" prefWidth="201.0" style="-fx-background-radius: 100; -fx-background-color: #fbd1a2;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Add">
+            <items>
+              <MenuItem mnemonicParsing="false">
+                     <graphic>
+                        <TextField fx:id="wordTarget" alignment="TOP_CENTER" onKeyPressed="#wordTargetInput" promptText="Word Target" style="-fx-background-color: #4ADEDE; -fx-background-radius: 50;" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false">
+                     <graphic>
+                        <TextField fx:id="wordExplain" alignment="TOP_CENTER" onKeyPressed="#wordExplainInput" promptText="Word Explain" style="-fx-background-color: #4ADEDE; -fx-background-radius: 50;" />
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Delete">
+               <items>
+                  <MenuItem mnemonicParsing="false">
+                     <graphic>
+                        <TextField fx:id="wordDelete" alignment="TOP_CENTER" onKeyPressed="#wordDeleteInput" promptText="Delete word" style="-fx-background-color: #4ADEDE; -fx-background-radius: 50;" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="AllWord">
+               <items>
+                  <MenuItem mnemonicParsing="false">
+                     <graphic>
+                        <Button mnemonicParsing="false" onAction="#buttonShowAllWord" style="-fx-background-radius: 100; -fx-background-color: #0077b6;" text="Show" textFill="#f6ff00">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Button>
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+</children>
+</AnchorPane>
