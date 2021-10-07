@@ -1,8 +1,5 @@
 package application;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
-
 import java.io.*;
 import java.util.Scanner;
 public class DictionaryManagement extends DictionaryCommandline {
@@ -37,7 +34,7 @@ public class DictionaryManagement extends DictionaryCommandline {
         return results.toString();
     }
 
-    public void insertWordToFile(String wordTarget, String wordExplain) {
+    public static void insertWordToFile(String wordTarget, String wordExplain) {
         try {
             FileWriter myWriter = new FileWriter("src/dictionaries.txt", true);
             myWriter.write(wordTarget + "\n");

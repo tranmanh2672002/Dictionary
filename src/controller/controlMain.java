@@ -24,11 +24,12 @@ public class controlMain extends Dictionary implements Initializable {
     private TextField wordExplain;
     @FXML
     private TextField wordDelete;
-
     @FXML
     private TextArea textAreaMenu;
+    String wordTar, wordEx, wordDele;
 
 
+    // Nhập từ tìm kiếm.
     @FXML
     public void setInput(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER) {
@@ -37,28 +38,30 @@ public class controlMain extends Dictionary implements Initializable {
         }
     }
 
+    // Thêm từ tiếng anh.
     @FXML
     public void wordTargetInput(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER) {
-            String word = wordTarget.getText();
-            System.out.println(word);
+            wordTar = wordTarget.getText();
+            System.out.println(wordTar);
         }
     }
 
+    // Từ để xóa.
     @FXML
     public void wordDeleteInput(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER) {
-            String word = wordDelete.getText();
-            System.out.println(word);
-            DictionaryManagement.deleteWord(word);
+            wordDele = wordDelete.getText();
+            System.out.println(wordDele);
         }
     }
 
+    // Nhập nghĩa tiếng Việt.
     @FXML
     public void wordExplainInput(KeyEvent event) {
         if(event.getCode() == KeyCode.ENTER) {
-            String word = wordExplain.getText();
-            System.out.println(word);
+            wordEx = wordExplain.getText();
+            System.out.println(wordEx);
         }
     }
 
@@ -70,6 +73,24 @@ public class controlMain extends Dictionary implements Initializable {
     @FXML
     public void buttonShowAllWord(ActionEvent event) throws IOException {
         textAreaMenu.setText(DictionaryManagement.dictionaryShowAllWord());
+    }
+
+    // Accept từ mới.
+    @FXML
+    public void buttonInsert(ActionEvent event) {
+        wordTar = wordTarget.getText();
+        wordEx = wordExplain.getText();
+        if (!wordEx.equals("") || !wordTar.equals("")) {
+            DictionaryManagement.insertWordToFile(wordTar, wordEx);
+            System.out.println("Thêm từ thành công.");
+        }
+
+    }
+
+    @FXML
+    public void buttonDelete(ActionEvent event) {
+        wordDele = wordDelete.getText();
+        DictionaryManagement.deleteWord(wordDele);
     }
 
     @FXML

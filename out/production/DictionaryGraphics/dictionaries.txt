@@ -5946,5 +5946,3 @@ with
 (prep) với, cùng
 withdraw
 (v) rút, rút khỏi, rút lui
-within
-(prep) trong vong thời gian, trong khoảng thời gian
