@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #caf0f8;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controlMain">
 <children>
-    <Label layoutX="124.0" layoutY="17.0" prefHeight="87.0" prefWidth="477.0" style="-fx-background-color: #caf0f8;" text="       DICTIONARY">
+    <Label layoutX="223.0" layoutY="33.0" prefHeight="87.0" prefWidth="339.0" style="-fx-background-color: #caf0f8;" text="DICTIONARY">
         <textFill>
             <LinearGradient endX="0.9714285714285714" endY="0.5571428571428572" startX="0.9523809523809523">
                 <stops>
@@ -29,7 +29,7 @@
         <font>
             <Font name="Baskerville Old Face" size="52.0" />
         </font></Label>
-    <Button layoutX="568.0" layoutY="121.0" mnemonicParsing="false" onAction="#buttonSearch" prefHeight="32.0" prefWidth="77.0" style="-fx-background-radius: 100; -fx-background-color: #0077b6;" text="Search" textFill="#ffe100">
+    <Button layoutX="381.0" layoutY="137.0" mnemonicParsing="false" onAction="#buttonSearch" prefHeight="32.0" prefWidth="77.0" style="-fx-background-radius: 100; -fx-background-color: #0077b6;" text="Search" textFill="#ffe100">
         <font>
             <Font name="System Bold Italic" size="14.0" />
         </font></Button>
@@ -37,22 +37,22 @@
         <font>
             <Font name="Baskerville Old Face" size="12.0" />
         </font></Button>
-    <TextField fx:id="searchField" layoutX="233.0" layoutY="121.0" onKeyPressed="#setInput" prefHeight="32.0" prefWidth="315.0" promptText="Searching" style="-fx-background-radius: 50; -fx-background-color: #ffb703; -fx-font-size: 14;">
+    <TextField fx:id="searchField" layoutX="20.0" layoutY="137.0" onKeyPressed="#setInput" onKeyReleased="#suggestWord" prefHeight="32.0" prefWidth="330.0" promptText="Searching" style="-fx-background-radius: 50; -fx-background-color: #ffb703; -fx-font-size: 14;">
         <font>
             <Font size="14.0" />
         </font></TextField>
-    <TextArea id="text-area" fx:id="textAreaMenu" layoutX="182.0" layoutY="177.0" prefHeight="322.0" prefWidth="465.0" scrollLeft="0.5" scrollTop="0.5" style="-fx-font-size: 16; -fx-background-color: aliceblue;">
+    <TextArea id="text-area" fx:id="textAreaMenu" layoutX="365.0" layoutY="177.0" prefHeight="322.0" prefWidth="308.0" scrollLeft="0.5" scrollTop="0.5" style="-fx-font-size: 16; -fx-background-color: aliceblue;">
         <font>
             <Font size="14.0" />
         </font></TextArea>
-    <ImageView fitHeight="93.0" fitWidth="96.0" focusTraversable="true" layoutX="22.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="126.0" fitWidth="124.0" focusTraversable="true" layoutX="572.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@../logo.png" />
         </image>
         <cursor>
             <Cursor fx:constant="SE_RESIZE" />
         </cursor></ImageView>
-      <MenuBar layoutX="14.0" layoutY="121.0" prefHeight="32.0" prefWidth="201.0" style="-fx-background-radius: 100; -fx-background-color: #fbd1a2;">
+      <MenuBar layoutX="14.0" layoutY="24.0" prefHeight="32.0" prefWidth="168.0" style="-fx-background-radius: 100; -fx-background-color: #fbd1a2;">
         <menus>
           <Menu mnemonicParsing="false" text="Add">
             <items>
@@ -106,5 +106,6 @@
             </Menu>
         </menus>
       </MenuBar>
+      <ListView fx:id="listView" layoutX="23.0" layoutY="177.0" onMouseClicked="#clicked" prefHeight="322.0" prefWidth="330.0" style="-fx-background-color: aliceblue; -fx-background-radius: 10;" />
 </children>
 </AnchorPane>

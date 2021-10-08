@@ -3,14 +3,20 @@ package controller;
 import application.Dictionary;
 import application.DictionaryManagement;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -28,6 +34,8 @@ public class controlMain extends Dictionary implements Initializable {
     private TextArea textAreaMenu;
     String wordTar, wordEx, wordDele;
 
+    @FXML
+    private ListView listView;
 
     // Nhập từ tìm kiếm.
     @FXML
@@ -66,6 +74,15 @@ public class controlMain extends Dictionary implements Initializable {
     }
 
     @FXML
+    public void suggestWord(KeyEvent event)
+    {
+        String word = searchField.getText().toString();
+        List<String> listSuggestWord= DictionaryManagement.dictionarySearcher(word);
+        ObservableList<String> input = FXCollections.observableArrayList(listSuggestWord);
+        listView.setItems(input);
+    }
+
+    @FXML
     public void buttonSearch(ActionEvent event) {
         String wordLook = searchField.getText();
         textAreaMenu.setText(DictionaryManagement.dictionaryLookup(wordLook));
@@ -100,6 +117,18 @@ public class controlMain extends Dictionary implements Initializable {
         System.exit(0);
     }
 
+    //click chuột vào từ tiếng anh để hiện ra nghĩa
+    @FXML
+    public void clicked (MouseEvent e){
+        try {
+            searchField.setText(listView.getSelectionModel().getSelectedItem().toString());
+            textAreaMenu.setText(DictionaryManagement.dictionaryLookup(listView.getSelectionModel().getSelectedItem().toString()));
+        } catch (NullPointerException e1) {
+            System.out.println("Nothing");
+        }
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         final Tooltip tooltip1 = new Tooltip();
@@ -109,5 +138,8 @@ public class controlMain extends Dictionary implements Initializable {
         tooltip3.setText("Meaning!");
         textAreaMenu.setTooltip(tooltip3);
         DictionaryManagement.insertListFromFile();
+        Collections.sort(listWordTarget);
+        ObservableList<String> listViewWordTarget = FXCollections.observableArrayList(listWordTarget);
+        listView.setItems(listViewWordTarget);
     }
 }

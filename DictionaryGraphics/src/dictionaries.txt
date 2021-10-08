@@ -1794,8 +1794,6 @@ feather
 (n) lông chim
 feature
 (n) (v) nét đặt biệt, điểm đặc trưng; mô tả nét đặc biệt,đặc trưng của...
-February
-tháng 2
 federal
 (adj) liên bang
 fee
@@ -2360,8 +2358,6 @@ hurry
 (v) (n) sự vội vàng, sự gấp rút
 in a hurry
 vội vàng, hối hả, gấp rút
-'hʌri
-(v) làm bị thương, gây thiệt hại
 husband
 (n) người chồng
 ice
@@ -2984,8 +2980,6 @@ manufacturer
 (n) người chế tạo, người sản xuất
 map
 (n) bản đồ
-March
-tháng ba
 march
 (v) (n) diễu hành, hành quân; cuộc hành quân, cuộc diễu hành
 mark
@@ -4710,7 +4704,7 @@ sincere
 (adj) thật thà, thẳng thắng, chân thành
 sincerely
 (adv) một cách chân thành
-Yours sincerely
+yours sincerely
 bạn chân thành của anh, chị.. (viết ở cuối thư)
 sing
 (v) hát, ca hát
